@@ -27,10 +27,17 @@ jobs:
           echo "build_matrix=$(yaml2json 'config/build.yaml' | jq -c .)" >> $GITHUB_ENV
           yaml2json "config/build.yaml" | jq
 
-      - name: Debug Build Matrix
-        run: echo "Build Matrix:${{ env.build_matrix }}"
+      - name: Validate Build Matrix
+  run: |
+    echo "Validating build_matrix..."
+    echo "${{ env.build_matrix }}" | jq .
+    
+      - name: Validate Build Matrix
+        run: |
+          echo "Validating build_matrix..."
+          echo "${{ env.build_matrix }}" | jq .
 
-  build:
+build:
     runs-on: ubuntu-latest
     container:
       image: zmkfirmware/zmk-build-arm:stable
@@ -38,7 +45,7 @@ jobs:
     name: Build
     strategy:
       fail-fast: false
-      matrix: ${{fromJson(needs.matrix.outputs.build_matrix)}}
+      matrix: ${{ fromJson(needs.matrix.outputs.build_matrix) }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
