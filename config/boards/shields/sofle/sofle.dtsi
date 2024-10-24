@@ -8,7 +8,7 @@
 #include <layouts/josefadamcik/sofle.dtsi>
 
 &josefadamcik_sofle_layout {
-    transform = <&default_transform>;abc
+    transform = <&default_transform>;
 };
 
 / {
