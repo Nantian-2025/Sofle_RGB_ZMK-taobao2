@@ -28,7 +28,7 @@ jobs:
           yaml2json "config/build.yaml" | jq
 
       - name: Debug Build Matrix
-        run: echo "Build Matrix: ${{ env.build_matrix }}"
+        run: echo "Build Matrix:${{ env.build_matrix }}"
 
   build:
     runs-on: ubuntu-latest
@@ -48,7 +48,7 @@ jobs:
           echo "build_dir=$(mktemp -d)" >> $GITHUB_ENV
 
       - name: Prepare variables
-        shell: sh -x {0}
+        shell: sh-x {0}
         env:
           board: ${{ matrix.board }}
           shield: ${{ matrix.shield }}
@@ -113,7 +113,7 @@ jobs:
 
       - name: West Build (${{ env.display_name }})
         working-directory: ${{ env.base_dir }}
-        shell: sh -x {0}
+        shell: sh-x {0}
         run: west build -s zmk/app -d "${{ env.build_dir }}" -b "${{ matrix.board }}" ${{ env.extra_west_args }} -- -DZMK_CONFIG=${{ env.base_dir }}/config ${{ env.extra_cmake_args }} ${{ matrix.cmake-args }}
 
       - name: ${{ env.display_name }} Kconfig file
