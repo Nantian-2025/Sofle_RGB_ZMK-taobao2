@@ -10,49 +10,35 @@ on:
   workflow_dispatch:
 
 jobs:
-  matrix:
-    runs-on: ubuntu-22.04
-    name: Fetch Build Keyboards
-    outputs:
-      build_matrix: ${{ env.build_matrix }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Install yaml2json
-        run: python3 -m pip install remarshal
-
-      - name: Fetch Build Matrix
-        run: |
-          echo "build_matrix=$(yaml2json 'config/build.yaml' | jq -c .)" >> $GITHUB_ENV
-          yaml2json "config/build.yaml" | jq
-
-      - name: Validate Build Matrix
-  run: |
-    echo "Validating build_matrix..."
-    echo "${{ env.build_matrix }}" | jq .
-    
-      - name: Validate Build Matrix
-        run: |
-          echo "Validating build_matrix..."
-          echo "${{ env.build_matrix }}" | jq .
-
-build:
+  build:
     runs-on: ubuntu-latest
     container:
       image: zmkfirmware/zmk-build-arm:stable
-    needs: matrix
     name: Build
     strategy:
       fail-fast: false
-      matrix: ${{ fromJson(needs.matrix.outputs.build_matrix) }}
+      matrix: ${{ fromJson(steps.read_matrix.outputs.build_matrix) }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Create build directory
+      - name: Install dependencies
         run: |
-          echo "build_dir=$(mktemp -d)" >> $GITHUB_ENV
+          sudo apt-get update
+          sudo apt-get install -y python3-pip
+          python3 -m pip install pyyaml
+
+      - name: Read Build Matrix
+        id: read_matrix
+        run: |
+          import yaml
+          import json
+          with open('config/build.yaml', 'r') as file:
+              build_matrix = yaml.safe_load(file)
+          print(f"::set-output name=build_matrix::{json.dumps(build_matrix)}")
+
+      - name: Create build directory
+        run: echo "build_dir=$(mktemp -d)" >> $GITHUB_ENV
 
       - name: Prepare variables
         shell: sh -x {0}
@@ -81,10 +67,10 @@ build:
           echo "display_name=${shield:+$shield - }${board}" >> $GITHUB_ENV
           echo "artifact_name=${artifact_name:-${shield:+$shield-}${board}-zmk}" >> $GITHUB_ENV
 
-      - name: Copy config files to isolated temporary directory
+      - name: Copy config files
         run: |
           if [ "${{ env.base_dir }}" != "${GITHUB_WORKSPACE}" ]; then
-            mkdir "${{ env.base_dir }}/config"
+            mkdir -p "${{ env.base_dir }}/config"
             cp -R config/* "${{ env.base_dir }}/config/"
           fi
 
@@ -118,12 +104,12 @@ build:
         working-directory: ${{ env.base_dir }}
         run: west zephyr-export
 
-      - name: West Build (${{ env.display_name }})
+      - name: West Build
         working-directory: ${{ env.base_dir }}
-        shell: sh -x {0}
+        shell: sh-x {0}
         run: west build -s zmk/app -d "${{ env.build_dir }}" -b "${{ matrix.board }}" ${{ env.extra_west_args }} -- -DZMK_CONFIG=${{ env.base_dir }}/config ${{ env.extra_cmake_args }} ${{ matrix.cmake-args }}
 
-      - name: ${{ env.display_name }} Kconfig file
+      - name: Kconfig file
         run: |
           if [ -f "${{ env.build_dir }}/zephyr/.config" ]
           then
@@ -133,7 +119,7 @@ build:
           fi
         if: ${{ !cancelled() }}
 
-      - name: ${{ env.display_name }} Devicetree file
+      - name: Devicetree file
         run: |
           if [ -f "${{ env.build_dir }}/zephyr/zephyr.dts" ]
           then
@@ -147,7 +133,7 @@ build:
         if: ${{ !cancelled() }}
 
       - name: Rename artifacts
-        shell: sh -x {0}
+        shell: sh-x {0}
         run: |
           mkdir "${{ env.build_dir }}/artifacts"
           if [ -f "${{ env.build_dir }}/zephyr/zmk.uf2" ]
@@ -158,16 +144,17 @@ build:
             cp "${{ env.build_dir }}/zephyr/zmk.${{ inputs.fallback_binary }}" "${{ env.build_dir }}/artifacts/${{ env.artifact_name }}.${{ inputs.fallback_binary }}"
           fi
 
-      - name: Archive (${{ env.display_name }})
+      - name: Archive artifacts
         uses: actions/upload-artifact@v4
         with:
           name: artifact-${{ env.artifact_name }}
           path: ${{ env.build_dir }}/artifacts
-          merge:
-            runs-on: ubuntu-latest
-            needs: build
-            name: Merge Output Artifacts
-          steps:
+
+  merge:
+    runs-on: ubuntu-latest
+    needs: build
+    name: Merge Output Artifacts
+    steps:
       - name: Merge Artifacts
         uses: actions/upload-artifact/merge@v4
         with:
