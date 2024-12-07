@@ -1253,13 +1253,24 @@
 // | CAPS  |  A  |  S  |  D   |  F   |  G   |                    |  H   |  J    |  K    |  L   |   ;   |   '   |
 // | SHIFT |  Z  |  X  |  C   |  V   |  B   |MUTE SPK|  |ClS  TAB|  N   |  M    |  ,    |  .   |   /   | SHIFT |
 //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE  | RAISE| CTRL  | ALT   | GUI  |
+
+//  | NC   | NC   |  ESC  |  1  |  2  |  3   |  4   |  5   |        |  6   |  7    |  8    |  9   |   0   | DEL   | NC   | NC   |
+//  | NC   | NC   |  TAB  |  Q  |  W  |  E   |  R   |  T   |        |  Y   |  U    |  I    |  O   |   P   | BKSPC | NC   | NC   |
+//  | NC   | NC   | CAPS  |  A  |  S  |  D   |  F   |  G   |        |  H   |  J    |  K    |  L   |   ;   |   '   | NC   | NC   |
+//  | NC   | NC   | SHIFT |  Z  |  X  |  C   |  V   |  B   |        |  N   |  M    |  ,    |  .   |   /   | SHIFT | NC   | NC   |
+//  | NC   | NC   | GUI   | ALT | CTRL| LOWER| ENTER| NC   |        | NC   | SPACE | RAISE | CTRL | ALT   | GUI   | NC   | NC   |
+//  | NC   | NC   | NC    | NC  | NC  | NC   | NC   |  NC  |        | NC   | NC    | NC    |  NC  | NC    | NC    | NC   | NC   |
+//  | NC   | NC   | NC    | NC  | NC  | NC   | NC   |  NC  |        | NC   | NC    | NC    |  NC  | NC    | NC    | NC   | NC   |
+
             bindings = <
-&kp ESC &kp N1 &kp N2     &kp N3   &kp N4    &kp N5                             &kp N6     &kp N7    &kp N8    &kp N9   &kp N0   &kp DEL
-&kp TAB &kp Q  &kp W      &kp E    &kp R     &kp T                              &kp Y      &kp U     &kp I     &kp O    &kp P    &kp BSPC
-&clcw   &kp A  &kp S      &kp D    &kp F     &kp G                              &kp H      &kp J     &kp K     &kp L    &kp SEMI &kp SQT
-&lscw   &kp Z  &kp X      &kp C    &kp V     &kp B      &kp C_MUTE &close_tab   &kp N      &kp M     &kp COMMA &kp DOT  &kp FSLH &rscw
-               &lwin_cad  &kp LALT &kp LCTRL &td_ll_l3  &ret_menu  &kp SPACE    &td_rl_l3  &kp RCTRL &kp RALT  &kp RGUI
-            >;
+&trans  &trans  &kp ESC    &kp N1   &kp N2     &kp N3     &kp N4     &kp N5      &kp N6     &kp N7    &kp N8    &kp N9    &kp N0   &kp DEL   &trans  &trans
+&trans  &trans  &kp TAB    &kp Q    &kp W      &kp E      &kp R      &kp T       &kp Y      &kp U     &kp I     &kp O     &kp P    &kp BSPC  &trans  &trans
+&trans  &trans  &clcw      &kp A    &kp S      &kp D      &kp F      &kp G       &kp H      &kp J     &kp K     &kp L     &kp SEMI &kp SQT   &trans  &trans
+&trans  &trans  &lscw      &kp Z    &kp X      &kp C      &kp V      &kp B       &kp N      &kp M     &kp COMMA &kp DOT   &kp FSLH &rscw     &trans  &trans
+&trans  &trans  &lwin_cad  &kp LALT &kp LCTRL  &td_ll_l3  &ret_menu  &trans      &trans     &kp SPACE &td_rl_l3 &kp RCTRL &kp RALT &kp RGUI  &trans  &trans
+&trans  &trans  &trans     &trans   &trans     &trans     &trans     &trans      &trans     &trans    &trans    &trans    &trans   &trans    &trans  &trans
+&trans  &trans  &trans     &trans   &trans     &trans     &trans     &trans      &trans     &trans    &trans    &trans    &trans   &trans    &trans  &trans
+        >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &tab_browser>;
         };
