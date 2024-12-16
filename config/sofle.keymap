@@ -1643,15 +1643,8 @@
             //  | NC   | NC   | NC    | NC  | NC  | NC   | NC   |  NC  |        | NC   | NC    | NC    |  NC  | NC    | NC    | NC   | NC   |
 
             bindings = <
-            &trans  &trans  &td_btr         &bt BT_SEL 0        &bt BT_SEL 1  &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4      &rgb_ug RGB_HUI &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &kp KP_MINUS &rgb_ug RGB_EFF   &trans  &trans
-            &trans  &trans  &rgb_ug RGB_BRI &kp PSCRN           &kp INS       &kp UP         &kp AT         &kp PRCNT         &rgb_ug RGB_HUD &kp N7       &kp N8        &kp N9          &kp KP_PLUS  &trans            &trans  &trans
-            &trans  &trans  &rgb_ug RGB_BRD &rgb_ug RGB_TOG     &kp LEFT      &kp DOWN       &kp RIGHT      &kp DLLR          &rgb_ug RGB_SAI &kp N4       &kp N5        &kp N6          &kp KP_PLUS  &rgb_ug RGB_SPI   &trans  &trans
-            &trans  &trans  &stm            &out OUT_TOG        &trans        &kp C_PREV     &kp C_NEXT     &kp HASH          &rgb_ug RGB_SAD &kp N1       &kp N2        &kp N3          &kp KP_ENTER &rgb_ug RGB_SPD   &trans  &trans
-            &trans  &trans  &lwin_cad       &kp LALT &kp LCTRL  &td_ll_l3     &ret_menu      &trans         &trans            &kp SPACE       &td_rl_l3    &kp RCTRL     &kp RALT        &kp RGUI     &trans            &trans  &trans
-            &trans  &trans  &trans          &trans              &trans        &trans         &trans         &trans            &trans          &trans       &trans        &trans          &trans       &trans            &trans  &trans
-            &trans  &trans  &trans          &trans              &trans        &trans         &trans         &trans            &trans          &trans       &trans        &trans          &trans       &trans            &trans  &trans            
->;
-
+&trans  &trans  &td_btr  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &rgb_ug RGB_HUI  &kp KP_EQUAL  &kp KP_DIVIDE  &kp A  &kp KP_MINUS  &rgb_ug RGB_EFF  &trans  &trans  &trans  &trans  &rgb_ug RGB_BRI  &kp PSCRN  &kp INS  &kp UP  &kp AT  &kp B  &rgb_ug RGB_HUD  &kp N7  &kp N8  &kp N9  &kp KP_PLUS  &trans  &trans  &trans  &trans  &trans  &rgb_ug RGB_BRD  &rgb_ug RGB_TOG  &kp LEFT  &kp DOWN  &kp RIGHT  &kp DLLR  &rgb_ug RGB_SAI  &kp N4  &kp N5  &kp N6  &kp KP_PLUS  &rgb_ug RGB_SPI  &trans  &trans  &trans  &trans  &stm  &out OUT_TOG  &trans  &kp C_PREV  &kp C_NEXT  &kp HASH  &rgb_ug RGB_SAD  &kp N1  &kp N2  &kp N3  &kp KP_ENTER  &rgb_ug RGB_SPD  &trans  &trans  &trans  &trans  &lwin_cad  &kp LALT
+            >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &tab_browser>;
         };
