@@ -5,7 +5,7 @@
     "default_transform": {
       "name": "default_transform",
       "layout": [
-     {"label":"=", "row": 0, "col":  0,"x":0.5, "y":0.5},
+        {"label":"=", "row": 0, "col":  0,"x":0.5, "y":0.5},
         {"label":"!",  "row": 0,  "col":  1, "x":1.5, "y":0.375},
         {"label":"@","row": 0,  "col":  2, "x":2.5, "y":0.38},
         {"label":"#", "row": 0,  "col":  3,"x":3.5, "y":0.25},
@@ -66,24 +66,24 @@
         {"label":"F10",  "row": 4, "col":  10, "x":17, "y":4.13}, 
         {"label":"F12",  "row": 4, "col":  11,"x":18, "y":4.375}, 
 
-        {"label":"Space", "x":12.75, "y":4.75}, 
-        {"label":"End", "x":13.75, "y":4.75},
-        {"label":"End", "x":4.75, "y":5},
-        {"label":"Space", "x":5.75, "y":5},
-        {"label":"X", "x":12.5, "y":5.75},
-        {"label":"K", "x":13.5, "y":5.75},
-        {"label":"Hom", "x":5, "y":6}, 
-        {"label":"Del", "x":6, "y":6}, 
-        {"label":"Z", "x":12.25, "y":6.75},
-        {"label":"M", "x":13.25, "y":6.75}, 
-        {"label":"Fn", "x":5.25, "y":7},
-        {"label":"Esc", "x":6.25, "y":7}]
+        {"label":"Space", "row": 5, "col":  0, "x":12.75, "y":4.75}, 
+        {"label":"End",    "row": 5, "col":  1, "x":13.75, "y":4.75},
+        {"label":"End",    "row": 5, "col":  2,"x":4.75, "y":5},
+        {"label":"Space", "row": 5, "col":  3, "x":5.75, "y":5},
+        {"label":"X",        "row": 5, "col":  4,"x":12.5, "y":5.75},
+        {"label":"K",        "row": 5, "col":  5,"x":13.5, "y":5.75},
+        {"label":"Hom",   "row": 5, "col":  6,"x":5, "y":6}, 
+        {"label":"Del",     "row": 5, "col":  7,"x":6, "y":6}, 
+        {"label":"Z",       "row": 5, "col":  8,"x":12.25, "y":6.75},
+        {"label":"M",      "row": 5, "col":  9,"x":13.25, "y":6.75}, 
+        {"label":"Fn",     "row": 5, "col":  10,"x":5.25, "y":7},
+        {"label":"Esc",    "row": 5, "col":  11, "x":6.25, "y":7}]
   
     },
     "five_column_transform": {
       "name": "five_column_transform",
       "layout": [
-     {"label":"=", "row": 0, "col":  0,"x":0.5, "y":0.5},
+        {"label":"=", "row": 0, "col":  0,"x":0.5, "y":0.5},
         {"label":"!",  "row": 0,  "col":  1, "x":1.5, "y":0.375},
         {"label":"@","row": 0,  "col":  2, "x":2.5, "y":0.38},
         {"label":"#", "row": 0,  "col":  3,"x":3.5, "y":0.25},
@@ -144,18 +144,18 @@
         {"label":"F10",  "row": 4, "col":  10, "x":17, "y":4.13}, 
         {"label":"F12",  "row": 4, "col":  11,"x":18, "y":4.375}, 
 
-        {"label":"Space", "x":12.75, "y":4.75}, 
-        {"label":"End", "x":13.75, "y":4.75},
-        {"label":"End", "x":4.75, "y":5},
-        {"label":"Space", "x":5.75, "y":5},
-        {"label":"X", "x":12.5, "y":5.75},
-        {"label":"K", "x":13.5, "y":5.75},
-        {"label":"Hom", "x":5, "y":6}, 
-        {"label":"Del", "x":6, "y":6}, 
-        {"label":"Z", "x":12.25, "y":6.75},
-        {"label":"M", "x":13.25, "y":6.75}, 
-        {"label":"Fn", "x":5.25, "y":7},
-        {"label":"Esc", "x":6.25, "y":7}]
+        {"label":"Space", "row": 5, "col":  0, "x":12.75, "y":4.75}, 
+        {"label":"End",    "row": 5, "col":  1, "x":13.75, "y":4.75},
+        {"label":"End",    "row": 5, "col":  2,"x":4.75, "y":5},
+        {"label":"Space", "row": 5, "col":  3, "x":5.75, "y":5},
+        {"label":"X",        "row": 5, "col":  4,"x":12.5, "y":5.75},
+        {"label":"K",        "row": 5, "col":  5,"x":13.5, "y":5.75},
+        {"label":"Hom",   "row": 5, "col":  6,"x":5, "y":6}, 
+        {"label":"Del",     "row": 5, "col":  7,"x":6, "y":6}, 
+        {"label":"Z",       "row": 5, "col":  8,"x":12.25, "y":6.75},
+        {"label":"M",      "row": 5, "col":  9,"x":13.25, "y":6.75}, 
+        {"label":"Fn",     "row": 5, "col":  10,"x":5.25, "y":7},
+        {"label":"Esc",    "row": 5, "col":  11, "x":6.25, "y":7}]
       
     }
   },
