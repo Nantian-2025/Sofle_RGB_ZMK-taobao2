@@ -1642,12 +1642,14 @@
             //  | NC   | NC   | NC    | NC  | NC  | NC   | NC   |  NC  |        | NC   | NC    | NC    |  NC  | NC    | NC    | NC   | NC   |
 
             bindings = <
-&kp ESC  &kp N1   &kp N2   &kp N3   &kp N4   &kp N5   &kp N6   &kp N7   &kp N8     &kp N9   &kp N0    &kp DEL
-&kp TAB  &kp Q    &kp W    &kp E    &kp R    &kp T    &kp Y    &kp U    &kp I      &kp O    &kp P     &kp BSPC
-&kp F1   &kp A    &kp S    &kp D    &kp F    &kp G    &kp H    &kp J    &kp K      &kp L    &kp SEMI  &kp SQT
-&kp F2   &kp Z    &kp X    &kp C    &kp V    &kp B    &kp N    &kp M    &kp COMMA  &kp DOT  &kp FSLH  &kp F23
-&kp F3   &kp F4   &kp F5   &kp F6                                       &kp F7     &kp F8   &kp F9    &kp F10
-&kp F11  &kp F12  &kp F13  &kp F16  &kp F15  &kp F14  &kp F19  &kp F22  &kp F18    &kp F21  &kp F17   &kp F20
+ &kp ESC    &kp F1    &kp F2    &kp F3    &kp F4  &kp F5                                         &kp F6      &kp F7     &kp F8    &kp F9   &kp F10  &kp F11
+ &kp EQL    &kp N1    &kp N2    &kp N3    &kp N4  &kp N5                                         &kp N6      &kp N7     &kp N8    &kp N9   &kp N0   &kp MINUS
+ &kp TAB    &kp Q     &kp W     &kp E     &kp R   &kp T                                          &kp Y       &kp U      &kp I     &kp O    &kp P    &kp BSLH
+ &kp LCTRL  &kp A     &kp S     &kp D     &kp F   &kp G                                          &kp H       &kp J      &kp K     &kp L    &kp SEMI &kp SQT
+ &kp LSHFT  &kp Z     &kp X     &kp C     &kp V   &kp B                                          &kp N       &kp M      &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
+                      &kp LGUI  &kp LALT                                                                                &kp LBKT  &kp RBKT
+                                                  &kp RET &kp DEL  &kp ESC    &kp GRAVE &kp BSPC &kp SPACE
+                                                  &mo 1   &kp HOME &kp END    &kp CAPS &kp K_APP &mo 2
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &tab_browser>;
@@ -1669,14 +1671,15 @@
             //  | NC   | NC   | NC  | NC   | NC   | NC    | NC    |  NC  |        | NC   | NC  | NC    |  NC  | NC    | NC   | NC   | NC   |
 
             bindings = <
-&kp ESC    &kp N1     &kp N2     &kp N3     &kp N4  &kp N5  &kp N6  &kp N7  &kp N8     &kp N9   &kp N0    &kp DEL
-&kp TAB    &kp Q      &kp W      &kp E      &kp R   &kp T   &kp Y   &kp U   &kp I      &kp O    &kp P     &kp BSPC
-&clcw      &kp A      &kp S      &kp D      &kp F   &kp G   &kp H   &kp J   &kp K      &kp L    &kp SEMI  &kp SQT
-&lscw      &kp Z      &kp X      &kp C      &kp V   &kp B   &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &rscw
-&lwin_cad  &kp LALT   &kp LCTRL  &td_ll_l3                                  &ret_menu  &trans   &trans    &kp SPACE
-&td_rl_l3  &kp RCTRL  &kp RALT   &kp RGUI   &trans  &trans  &trans  &trans  &trans     &trans   &trans    &trans
+ &kp ESC    &kp F1    &kp F2    &kp F3    &kp F4  &kp F5                                         &kp F6      &kp F7     &kp F8    &kp F9   &kp F10  &kp F11
+ &kp EQL    &kp N1    &kp N2    &kp N3    &kp N4  &kp N5                                         &kp N6      &kp N7     &kp N8    &kp N9   &kp N0   &kp MINUS
+ &kp TAB    &kp Q     &kp W     &kp E     &kp R   &kp T                                          &kp Y       &kp U      &kp I     &kp O    &kp P    &kp BSLH
+ &kp LCTRL  &kp A     &kp S     &kp D     &kp F   &kp G                                          &kp H       &kp J      &kp K     &kp L    &kp SEMI &kp SQT
+ &kp LSHFT  &kp Z     &kp X     &kp C     &kp V   &kp B                                          &kp N       &kp M      &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
+                      &kp LGUI  &kp LALT                                                                                &kp LBKT  &kp RBKT
+                                                  &kp RET &kp DEL  &kp ESC    &kp GRAVE &kp BSPC &kp SPACE
+                                                  &mo 1   &kp HOME &kp END    &kp CAPS &kp K_APP &mo 2
             >;
-
             sensor-bindings = <&inc_dec_kp C_FAST_FORWARD C_REWIND &inc_dec_kp PG_UP PG_DN>;
         };
 
@@ -1692,12 +1695,14 @@
             //  | NC   | NC   | NC    | NC  | NC  | NC   | NC   |  NC  |        | NC   | NC    | NC    |  NC  | NC    | NC    | NC   | NC   |
 
             bindings = <
-&kp ESC    &kp N1     &kp N2     &kp N3     &kp N4  &kp N5  &kp N6  &kp N7  &kp N8     &kp N9   &kp N0    &kp DEL
-&kp TAB    &kp Q      &kp W      &kp E      &kp R   &kp T   &kp Y   &kp U   &kp I      &kp O    &kp P     &kp BSPC
-&clcw      &kp A      &kp S      &kp D      &kp F   &kp G   &kp H   &kp J   &kp K      &kp L    &kp SEMI  &kp SQT
-&lscw      &kp Z      &kp X      &kp C      &kp V   &kp B   &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &rscw
-&lwin_cad  &kp LALT   &kp LCTRL  &td_ll_l3                                  &ret_menu  &trans   &trans    &kp SPACE
-&td_rl_l3  &kp RCTRL  &kp RALT   &kp RGUI   &trans  &trans  &trans  &trans  &trans     &trans   &trans    &trans
+ &kp ESC    &kp F1    &kp F2    &kp F3    &kp F4  &kp F5                                         &kp F6      &kp F7     &kp F8    &kp F9   &kp F10  &kp F11
+ &kp EQL    &kp N1    &kp N2    &kp N3    &kp N4  &kp N5                                         &kp N6      &kp N7     &kp N8    &kp N9   &kp N0   &kp MINUS
+ &kp TAB    &kp Q     &kp W     &kp E     &kp R   &kp T                                          &kp Y       &kp U      &kp I     &kp O    &kp P    &kp BSLH
+ &kp LCTRL  &kp A     &kp S     &kp D     &kp F   &kp G                                          &kp H       &kp J      &kp K     &kp L    &kp SEMI &kp SQT
+ &kp LSHFT  &kp Z     &kp X     &kp C     &kp V   &kp B                                          &kp N       &kp M      &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
+                      &kp LGUI  &kp LALT                                                                                &kp LBKT  &kp RBKT
+                                                  &kp RET &kp DEL  &kp ESC    &kp GRAVE &kp BSPC &kp SPACE
+                                                  &mo 1   &kp HOME &kp END    &kp CAPS &kp K_APP &mo 2
             >;
 
             sensor-bindings = <&rgb_encoder &inc_dec_kp PG_UP PG_DN>;
@@ -1715,12 +1720,14 @@
             //  | NC   | NC   | NC    | NC  | NC  | NC   | NC   |  NC  |        | NC   | NC    | NC    |  NC  | NC    | NC    | NC   | NC   |
 
             bindings = <
-&kp ESC    &kp N1     &kp N2     &kp N3     &kp N4  &kp N5  &kp N6  &kp N7  &kp N8     &kp N9   &kp N0    &kp DEL
-&kp TAB    &kp Q      &kp W      &kp E      &kp R   &kp T   &kp Y   &kp U   &kp I      &kp O    &kp P     &kp BSPC
-&clcw      &kp A      &kp S      &kp D      &kp F   &kp G   &kp H   &kp J   &kp K      &kp L    &kp SEMI  &kp SQT
-&lscw      &kp Z      &kp X      &kp C      &kp V   &kp B   &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &rscw
-&lwin_cad  &kp LALT   &kp LCTRL  &td_ll_l3                                  &ret_menu  &trans   &trans    &kp SPACE
-&td_rl_l3  &kp RCTRL  &kp RALT   &kp RGUI   &trans  &trans  &trans  &trans  &trans     &trans   &trans    &trans
+ &kp ESC    &kp F1    &kp F2    &kp F3    &kp F4  &kp F5                                         &kp F6      &kp F7     &kp F8    &kp F9   &kp F10  &kp F11
+ &kp EQL    &kp N1    &kp N2    &kp N3    &kp N4  &kp N5                                         &kp N6      &kp N7     &kp N8    &kp N9   &kp N0   &kp MINUS
+ &kp TAB    &kp Q     &kp W     &kp E     &kp R   &kp T                                          &kp Y       &kp U      &kp I     &kp O    &kp P    &kp BSLH
+ &kp LCTRL  &kp A     &kp S     &kp D     &kp F   &kp G                                          &kp H       &kp J      &kp K     &kp L    &kp SEMI &kp SQT
+ &kp LSHFT  &kp Z     &kp X     &kp C     &kp V   &kp B                                          &kp N       &kp M      &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
+                      &kp LGUI  &kp LALT                                                                                &kp LBKT  &kp RBKT
+                                                  &kp RET &kp DEL  &kp ESC    &kp GRAVE &kp BSPC &kp SPACE
+                                                  &mo 1   &kp HOME &kp END    &kp CAPS &kp K_APP &mo 2
             >;
 
             sensor-bindings = <&inc_dec_kp PG_DN PG_UP &inc_dec_kp C_VOL_UP C_VOL_DN>;
