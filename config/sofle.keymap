@@ -1648,8 +1648,8 @@
  &kp LCTRL  &kp A     &kp S     &kp D     &kp F   &kp G                                          &kp H       &kp J      &kp K     &kp L    &kp SEMI &kp SQT
  &kp LSHFT  &kp Z     &kp X     &kp C     &kp V   &kp B                                          &kp N       &kp M      &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
  &kp A  &kp B    &kp LGUI  &kp LALT                                                                        &kp LBKT   &kp RBKT  &kp C   &kp D
-                                                  &kp F1 &kp F2  &kp F3    &kp F4 &kp F5 &kp F6
-                                                  &mo F7  &kp F2 &kp F8    &kp F9 &kp F10
+                                                  &kp F1  &kp F2  &kp F3    &kp F4  &kp F5  &kp F6
+                                                  &mo F7  &kp F8  &kp F9    &kp F10 &kp F11 &kp F11
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &tab_browser>;
