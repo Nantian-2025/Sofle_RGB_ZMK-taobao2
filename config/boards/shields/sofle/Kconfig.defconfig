@@ -1,11 +1,6 @@
 # Copyright (c) 2020 Ryan Cross
 # SPDX-License-Identifier: MIT
 
-
-
-
-
-
 if SHIELD_SOFLE_LEFT
 
 config ZMK_KEYBOARD_NAME
@@ -55,20 +50,6 @@ config WS2812_STRIP
 endif
 
 
-
-config ZMK_STUDIO
-    bool "Enable ZMK Studio support"
-    default n
-
-config ZMK_STUDIO_LOCKING
-    bool "Enable locking in ZMK Studio"
-    default y
-    depends on ZMK_STUDIO
-
-config ZMK_STUDIO_LOCK_ON_DISCONNECT
-    bool "Lock keyboard on disconnect in ZMK Studio"
-    default y
-    depends on ZMK_STUDIO_LOCKING
 
 
 endif
