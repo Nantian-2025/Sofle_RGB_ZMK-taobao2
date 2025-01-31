@@ -1,9 +1,9 @@
 #include <physical_layouts.dtsi>
 
 / {
-    physical_layout0: physical_layout_0 {
+    sofle_layout: sofle_layout {
         compatible = "zmk,physical-layout";
-        display-name = "default_transform";
+        display-name = "sofle";
 
         kscan = <&kscan0>;
         transform = <&matrix_transform0>;
