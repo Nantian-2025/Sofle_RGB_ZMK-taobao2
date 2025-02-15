@@ -3,9 +3,9 @@
  *
  * SPDX-License-Identifier: MIT
  */
-#include <layouts/foostan/sofle.dtsi>
-#include <dt-bindings/zmk/matrix_transform.h>
-#include <layouts/josefadamcik/sofle.dtsi>
+include <layouts/foostan/sofle.dtsi>
+include <dt-bindings/zmk/matrix_transform.h>
+include <layouts/josefadamcik/sofle.dtsi>
 
 &josefadamcik_sofle_layout {
     transform = <&default_transform>;
@@ -15,7 +15,7 @@
     chosen {
         zephyr,display = &oled;
         zmk,kscan = &kscan0;
-        zmk,physical-layouts = &physical_layout_0;
+        zmk,physical-layouts = &sofle_layout;
     };
 
     default_transform: keymap_transform_0 {
@@ -107,7 +107,15 @@
     };
 };
 
-&physical_layout_0 {
+&sofle_layout {
     transform = <&default_transform>;
     kscan = <&kscan0>;
+};
+
+zephyr_udc0: &usbd { 
+
+    compatible = "nordic,nrf-usbd"; 
+
+    status = "okay"; 
+
 };
