@@ -1,0 +1,15 @@
+file_format: "1"
+id: dactyl68
+name: dactyl68
+type: shield
+url: https://github.com/josefadamcik/SofleKeyboard
+requires: [pro_micro]
+exposes: [i2c_oled]
+features:
+  - keys
+  - display
+  - encoder
+  - underglow
+siblings:
+  - dactyl68_left
+  - dactyl68_right
